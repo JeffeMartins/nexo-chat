@@ -7,7 +7,7 @@ import {
 import { parse, serialize } from "cookie";
 import argon2 from "argon2";
 import type { Request, Response } from "express";
-import type { SessionView, User } from "@conversa/contracts";
+import type { SessionView, User } from "@nexo/contracts";
 import { db } from "./db.js";
 import { config } from "./config.js";
 import { AppError } from "./errors.js";

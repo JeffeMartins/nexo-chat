@@ -15,7 +15,7 @@ import {
   Trash2,
   WifiOff,
 } from "lucide-react";
-import type { SessionView, Conversation } from "@conversa/contracts";
+import type { SessionView, Conversation } from "@nexo/contracts";
 import { api } from "./api";
 import { useChat } from "./useChat";
 import NewConversation from "./NewConversation";
@@ -114,7 +114,7 @@ export default function ChatPage({
             <span className="brand-icon">
               <MessageCircle size={22} />
             </span>
-            conversa<span className="brand-dot">.</span>
+            nexo<span className="brand-dot">.</span>
           </a>
           <span className="version-pill">SEU ESPAÇO</span>
         </div>

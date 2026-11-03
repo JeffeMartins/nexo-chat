@@ -6,7 +6,7 @@ import type {
   Message,
   Ack,
   User,
-} from "@conversa/contracts";
+} from "@nexo/contracts";
 import { api, ApiError } from "./api";
 import { mergeMessages } from "./messages";
 export type Pending = {

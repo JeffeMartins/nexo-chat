@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
-import { sendSchema, signupSchema, groupSchema } from "@conversa/contracts";
+import { sendSchema, signupSchema, groupSchema } from "@nexo/contracts";
 import { mergeMessages } from "../../apps/web/src/messages";
-import type { Message } from "@conversa/contracts";
+import type { Message } from "@nexo/contracts";
 const id = "6fb4473a-20ad-4c49-b065-7e787875749f";
 describe("untrusted chat input", () => {
   it("normalizes IDs and text without accepting control characters or forged sender", () => {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { SessionView } from "@conversa/contracts";
+import type { SessionView } from "@nexo/contracts";
 import { MessageCircle } from "lucide-react";
 import { api } from "./api";
 import AuthPage from "./AuthPage";

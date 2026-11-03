@@ -1,5 +1,5 @@
 {
-  "name": "conversa-platform",
+  "name": "nexo-chat",
   "version": "1.0.0",
   "private": true,
   "workspaces": [
@@ -10,7 +10,7 @@
     "node": ">=24 <25"
   },
   "scripts": {
-    "build": "npm run build -w @conversa/contracts && npm run build -w @conversa/api && npm run build -w @conversa/web",
+    "build": "npm run build -w @nexo/contracts && npm run build -w @nexo/api && npm run build -w @nexo/web",
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",

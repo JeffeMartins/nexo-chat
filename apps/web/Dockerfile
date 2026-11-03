@@ -7,7 +7,7 @@ COPY packages/contracts/package.json packages/contracts/package.json
 RUN npm ci
 COPY packages packages
 COPY apps/web apps/web
-RUN npm run build -w @conversa/contracts && npm run build -w @conversa/web
+RUN npm run build -w @nexo/contracts && npm run build -w @nexo/web
 
 FROM nginxinc/nginx-unprivileged:stable-alpine
 COPY apps/web/nginx.conf /etc/nginx/conf.d/default.conf

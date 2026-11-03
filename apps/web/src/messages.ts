@@ -1,4 +1,4 @@
-import type { Message } from "@conversa/contracts";
+import type { Message } from "@nexo/contracts";
 export function mergeMessages(
   previous: Message[],
   incoming: Message[],

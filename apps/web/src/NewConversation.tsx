@@ -7,11 +7,7 @@ import {
   MessageCircle,
   ArrowRight,
 } from "lucide-react";
-import type {
-  DirectoryUser,
-  Conversation,
-  SessionView,
-} from "@conversa/contracts";
+import type { DirectoryUser, Conversation, SessionView } from "@nexo/contracts";
 import { api } from "./api";
 export default function NewConversation({
   session,

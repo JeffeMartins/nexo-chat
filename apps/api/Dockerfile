@@ -7,7 +7,7 @@ COPY packages/contracts/package.json packages/contracts/package.json
 RUN npm ci
 COPY packages packages
 COPY apps/api apps/api
-RUN npm run build -w @conversa/contracts && npm run build -w @conversa/api
+RUN npm run build -w @nexo/contracts && npm run build -w @nexo/api
 
 FROM node:24-bookworm-slim AS runtime
 WORKDIR /app
@@ -16,7 +16,7 @@ COPY package*.json ./
 COPY apps/api/package.json apps/api/package.json
 COPY apps/web/package.json apps/web/package.json
 COPY packages/contracts/package.json packages/contracts/package.json
-RUN npm ci --omit=dev --workspace=@conversa/api --include-workspace-root=false && npm cache clean --force
+RUN npm ci --omit=dev --workspace=@nexo/api --include-workspace-root=false && npm cache clean --force
 COPY --from=build --chown=node:node /app/packages/contracts/dist packages/contracts/dist
 COPY --from=build --chown=node:node /app/apps/api/dist apps/api/dist
 COPY --chown=node:node apps/api/migrations migrations

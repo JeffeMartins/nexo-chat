@@ -7,7 +7,7 @@ import {
   Eye,
   EyeOff,
 } from "lucide-react";
-import type { SessionView } from "@conversa/contracts";
+import type { SessionView } from "@nexo/contracts";
 import { api } from "./api";
 export default function AuthPage({
   onSession,
@@ -53,7 +53,7 @@ export default function AuthPage({
           <span className="brand-icon">
             <MessageCircle size={23} />
           </span>
-          conversa<span className="brand-dot">.</span>
+          nexo<span className="brand-dot">.</span>
         </a>
         <div className="auth-form-wrap">
           <span className="eyebrow">PERTO DE QUEM IMPORTA</span>

@@ -14,8 +14,8 @@ import {
   groupSchema,
   sendSchema,
   memberSchema,
-} from "@conversa/contracts";
-import type { Ack, Message } from "@conversa/contracts";
+} from "@nexo/contracts";
+import type { Ack, Message } from "@nexo/contracts";
 import { config } from "./config.js";
 import { db, transaction } from "./db.js";
 import { AppError } from "./errors.js";
@@ -458,7 +458,7 @@ const cleanup = setInterval(() => {
 http.listen(config.PORT, "0.0.0.0", () =>
   logger.info(
     { port: config.PORT, instance: config.INSTANCE_ID },
-    "Conversa API ready",
+    "Nexo API ready",
   ),
 );
 let stopping = false;

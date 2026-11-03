@@ -34,3 +34,15 @@ Presença pode ficar antiga por até a lease expirar. Logout revoga a sessão no
 ## Próximas evoluções
 
 Medição de carga com quantidade de sockets, duração, tamanho de mensagens, CPU/memória e latências registradas; métricas/tracing; recuperação de senha/e-mail; bloqueio/moderação; expiração/retention de mensagens e sessões; convites com consentimento; transferência de propriedade e saída de grupos; backup/restauração testados. A demonstração não afirma atender esses requisitos ainda.
+
+## Atualização de instalações anteriores ao nome Nexo
+
+O projeto Docker e o repositório agora se chamam `nexo-chat`; os pacotes usam `@nexo/*`. Para uma instalação que já possui o volume antigo, pare o stack anterior sem remover volumes e acrescente estas variáveis ao `.env` antes de subir a versão nova:
+
+```dotenv
+DB_USER=conversa
+DB_NAME=conversa
+CHAT_DATA_VOLUME=conversa-chat_chat-data
+```
+
+As credenciais existentes permanecem no mesmo `.env`. Isso mantém o banco, as contas e as mensagens da instalação anterior. Instalações novas usam os defaults `nexo` e volume `nexo-chat_chat-data`. O nome interno do cookie e a chave de lock das migrations foram mantidos por compatibilidade com sessões e bancos existentes; as migrations já aplicadas não foram reescritas.

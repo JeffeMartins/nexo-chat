@@ -1,5 +1,5 @@
 {
-  "name": "@conversa/web",
+  "name": "@nexo/web",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -8,7 +8,7 @@
     "dev": "vite --host 127.0.0.1 --port 3100"
   },
   "dependencies": {
-    "@conversa/contracts": "1.0.0",
+    "@nexo/contracts": "1.0.0",
     "react": "19.3.1",
     "react-dom": "19.3.1",
     "socket.io-client": "4.8.4",

@@ -1,8 +1,8 @@
-# Conversa · Realtime Chat Platform
+# Nexo Chat
 
 Chat autoral com cadastro e login, conversas privadas, grupos e presença online. Frontend React e backend Node.js/TypeScript com Socket.IO, PostgreSQL e Redis. A interface e os dados usados nas imagens são próprios/fictícios.
 
-![Conversa — demonstração do chat](docs/images/chat-desktop.png)
+![Nexo — demonstração do chat](docs/images/chat-desktop.png)
 
 ## O que você pode fazer
 
@@ -20,15 +20,15 @@ O projeto é uma demonstração de engenharia para portfólio. Não depende de s
 Pré-requisitos: Git, Docker com Compose v2 e Node.js 24. Aproximadamente 2 GB livres para executar o stack; reserve mais memória para builds/testes. Linux containers devem estar habilitados no Docker Desktop.
 
 ```bash
-git clone https://github.com/JeffeMartins/realtime-chat-platform.git
-cd realtime-chat-platform
+git clone https://github.com/JeffeMartins/nexo-chat.git
+cd nexo-chat
 node scripts/setup.mjs
 docker compose up --build -d --wait --wait-timeout 180
 ```
 
 Abra **http://localhost:3100**, crie uma conta e use outra janela/perfil anônimo para cadastrar uma segunda pessoa. Clique no **+**, encontre o usuário e comece a conversa. Para testar grupo, crie uma terceira conta e selecione **Um grupo**. Não há contas padrão ou senha compartilhada embutida na aplicação.
 
-O setup gera `.env` com senhas aleatórias para banco e Redis, sem sobrescrever arquivo existente. Esse arquivo fica fora do Git. Os dados são mantidos no volume `conversa-chat_chat-data`, isolado dos outros projetos da máquina. PostgreSQL/Redis não publicam portas no host.
+O setup gera `.env` com senhas aleatórias para banco e Redis, sem sobrescrever arquivo existente. Esse arquivo fica fora do Git. Os dados são mantidos no volume `nexo-chat_chat-data`, isolado dos outros projetos da máquina. PostgreSQL/Redis não publicam portas no host.
 
 | Recurso                  | Endereço                         |
 | ------------------------ | -------------------------------- |
@@ -82,7 +82,7 @@ npm run test:e2e
 
 Em Linux limpo use `npx playwright install --with-deps chromium`. Testes de integração criam usuários sintéticos próprios e usam PostgreSQL, Redis e dois servidores reais; não precisam de acesso a dados de terceiros. Os testes de navegador usam sessões independentes. Relatórios e screenshots gerados ficam ignorados em `playwright-report`, `test-results` e `.artifacts`.
 
-Para recarga do frontend: `npm run build -w @conversa/contracts` e `npm run dev -w @conversa/web`, após parar o container `web` que usa 3100; mantenha API/banco/cache em Docker. O Vite encaminha HTTP e sockets à API 8100. Evite trocar a origem sem ajustar `APP_ORIGIN`: a validação de origem é intencional.
+Para recarga do frontend: `npm run build -w @nexo/contracts` e `npm run dev -w @nexo/web`, após parar o container `web` que usa 3100; mantenha API/banco/cache em Docker. O Vite encaminha HTTP e sockets à API 8100. Evite trocar a origem sem ajustar `APP_ORIGIN`: a validação de origem é intencional.
 
 ## Segurança e escopo
 

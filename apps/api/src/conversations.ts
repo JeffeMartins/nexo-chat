@@ -1,6 +1,6 @@
 import { randomUUID } from "node:crypto";
 import type pg from "pg";
-import type { Message, Conversation, User } from "@conversa/contracts";
+import type { Message, Conversation, User } from "@nexo/contracts";
 import { db, transaction } from "./db.js";
 import { AppError, missing } from "./errors.js";
 type MessageRow = {
