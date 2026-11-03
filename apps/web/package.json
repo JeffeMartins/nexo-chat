@@ -1,0 +1,23 @@
+{
+  "name": "@conversa/web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit && vite build",
+    "dev": "vite --host 127.0.0.1 --port 3100"
+  },
+  "dependencies": {
+    "@conversa/contracts": "1.0.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "socket.io-client": "4.8.4",
+    "lucide-react": "^0.577.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "6.2.1",
+    "vite": "8.3.5"
+  }
+}

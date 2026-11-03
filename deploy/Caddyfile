@@ -1,0 +1,5 @@
+{$CHAT_DOMAIN} {
+  encode zstd gzip
+  header -Server
+  reverse_proxy web:8080
+}

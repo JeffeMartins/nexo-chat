@@ -1,0 +1,39 @@
+{
+  "name": "conversa-platform",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "build": "npm run build -w @conversa/contracts && npm run build -w @conversa/api && npm run build -w @conversa/web",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "test:integration": "node --test --test-concurrency=1 tests/api.test.mjs",
+    "test:e2e": "playwright test",
+    "setup": "node scripts/setup.mjs"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "eslint": "10.14.0",
+    "typescript-eslint": "8.72.1",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "globals": "17.14.0",
+    "prettier": "3.9.10",
+    "typescript": "5.9.3",
+    "vitest": "5.1.0",
+    "@playwright/test": "1.64.1",
+    "@axe-core/playwright": "^4.11.0",
+    "@types/node": "^24.0.0"
+  },
+  "overrides": {
+    "minimatch": "^11.0.4"
+  },
+  "type": "module"
+}

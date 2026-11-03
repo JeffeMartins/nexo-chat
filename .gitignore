@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.env
+*.tsbuildinfo
+.artifacts/
+playwright-report/
+test-results/
+*.log
+.idea/
