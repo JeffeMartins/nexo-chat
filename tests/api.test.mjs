@@ -117,6 +117,14 @@ before(async () => {
 after(() => {
   for (const socket of sockets) socket.disconnect();
 });
+test("unsupported socket events disconnect only that socket without granting room access", async () => {
+  const probe = await connect(ana);
+  const closed = event(probe, "disconnect");
+  probe.emit("conversation:join", { conversationId: randomUUID() });
+  await closed;
+  assert.equal((await call("/api/auth/me", {}, ana)).status, 200);
+  assert.equal(anaSocket.connected, true);
+});
 test("successful login rotates the previous browser session and disconnects its sockets", async () => {
   const previousSocket = await connect(intruder, second);
   const disconnected = event(previousSocket, "disconnect");

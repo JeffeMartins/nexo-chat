@@ -333,13 +333,27 @@ io.on("connection", (socket) => {
     () => socket.disconnect(true),
     Math.max(0, s.expiresAt.getTime() - Date.now()),
   );
-  socket.use(async (_packet, next) => {
+  let packetWindow = Date.now();
+  let packetCount = 0;
+  socket.use(async (packet, next) => {
+    if (Date.now() - packetWindow >= 10000) {
+      packetWindow = Date.now();
+      packetCount = 0;
+    }
+    packetCount++;
+    // Reject unsupported events and floods before they can queue database work.
+    if (
+      !["message:send", "typing:start"].includes(String(packet[0])) ||
+      packetCount > 80
+    ) {
+      socket.disconnect(true);
+      return;
+    }
     try {
       await sessionFromCookie(socket.request.headers.cookie);
       next();
     } catch {
       socket.disconnect(true);
-      next(new Error("UNAUTHENTICATED"));
     }
   });
   socket.on(

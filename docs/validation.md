@@ -7,7 +7,7 @@ Execução local em 03/11/2026: Windows, Node.js 24.22.1, Docker Desktop/engine 
 - Build TypeScript strict dos contratos/API e build de produção Vite/React concluídos.
 - ESLint, React Hooks e formatação Prettier verificados.
 - Três testes unitários: contratos rejeitam mensagem/identidade não permitida, cadastro/grupo inválidos; reconciliação deduplica ack/event/histórico e ordena sequências maiores que o limite seguro de number em JavaScript.
-- Oito testes HTTP/Socket.IO com duas instâncias reais da API: rotação de sessão, origem/CSRF, conversa privada única, entrega entre processos via Redis, idempotência, replay de mensagens após desconexão, autorização e remoção de membros, múltiplas abas, logout entre instâncias e cursor de leitura monotônico.
+- Nove testes HTTP/Socket.IO com duas instâncias reais da API: rejeição de eventos não suportados, rotação de sessão, origem/CSRF, conversa privada única, entrega entre processos via Redis, idempotência, replay de mensagens após desconexão, autorização e remoção de membros, múltiplas abas, logout entre instâncias e cursor de leitura monotônico.
 - Quatro cenários Playwright: cadastro/logout, conversa em navegadores independentes com presença e reload, grupo de três pessoas com remoção de participante, acessibilidade automatizada e layout móvel.
 - Auditoria axe WCAG A/AA passou nos cenários de login e workspace testados; viewport móvel sem overflow horizontal. Não é uma certificação de acessibilidade nem validação completa com leitores de tela.
 - Redis foi reiniciado e, depois da recuperação, as duas APIs passaram novamente no cenário de entrega entre processos. Não foi simulada toda combinação de partições de rede e crashes possíveis.
